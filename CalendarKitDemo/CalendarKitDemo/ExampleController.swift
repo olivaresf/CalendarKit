@@ -64,6 +64,10 @@ class ExampleController: DayViewController, DatePickerControllerDelegate {
     navigationController?.navigationBar.isTranslucent = false
     dayView.autoScrollToFirstEvent = true
     reloadData()
+	
+	DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+		self.dayView.scrollTo(hour24: 20)
+	}
   }
 
   @objc func changeStyle() {
